@@ -5,3 +5,18 @@ build/
 dist/
 MANIFEST
 bjoern.egg-info/
+
+# direnv stuff
+.envrc
+
+# coverage stuff
+.coverage
+cov/
+coverage.info
+*.gcno
+
+# libs
+*.so
+
+# tox envs
+.tox/
