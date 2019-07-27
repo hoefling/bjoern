@@ -30,7 +30,7 @@ def run_bjoern(wsgi_app, host=None, port=None):
     try:
         yield 'http://{}:{}'.format(host, port)
     finally:
-        os.kill(p.pid, signal.SIGTERM)
+        os.kill(p.pid, signal.SIGINT)
         p.join()
 #        sock.shutdown(socket.SHUT_RDWR)
         sock.close()
