@@ -1,9 +1,19 @@
 import os
 import glob
+import sys
 from setuptools import setup, Extension
 
 SOURCE_FILES = [os.path.join('http-parser', 'http_parser.c')] + \
                sorted(glob.glob(os.path.join('bjoern', '*.c')))
+
+if 'linux' in sys.platform:
+    CFLAGS = ['-std=c99', '-fno-strict-aliasing', '-fcommon',
+              '-fPIC', '-Wall', '-Wextra', '-Wno-unused-parameter',
+              '-Wno-missing-field-initializers', '-g']
+elif sys.platform == 'win32':
+#    CFLAGS = ['/Wall']
+    CFLAGS = []
+
 
 bjoern_extension = Extension(
     '_bjoern',
@@ -14,9 +24,7 @@ bjoern_extension = Extension(
                      ('WANT_SIGINT_HANDLING', '1'),
                      ('WANT_SIGNAL_HANDLING', '1'),
                      ('SIGNAL_CHECK_INTERVAL', '0.1')],
-    extra_compile_args = ['-std=c99', '-fno-strict-aliasing', '-fcommon',
-                          '-fPIC', '-Wall', '-Wextra', '-Wno-unused-parameter',
-                          '-Wno-missing-field-initializers', '-g']
+    extra_compile_args = CFLAGS
 )
 
 setup(
