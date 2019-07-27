@@ -32,5 +32,5 @@ def run_bjoern(wsgi_app, host=None, port=None):
     finally:
         os.kill(p.pid, signal.SIGTERM)
         p.join()
-        sock.shutdown(socket.SHUT_RDWR)
+#        sock.shutdown(socket.SHUT_RDWR)
         sock.close()
