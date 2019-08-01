@@ -1,6 +1,6 @@
 [run]
 source = .
 omit =
-    */tests_new/*
+    */pytests/*
     */.tox/*
     setup.py

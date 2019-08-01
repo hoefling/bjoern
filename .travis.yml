@@ -1,0 +1,140 @@
+language: shell
+env:
+  global:
+  - secure: FaEY3+CJnVhkkU0J6IXsTjFVG1MISbn32/bJ2IJ9eO1AzehjDpzShrYFZOHbwKqKK4vcZRGMkRRFfNh3/uIV9bJd8ZtHFrFZPchSMeVQgCb3xRrbuXqvsM+edZbBUSO+N9b8PrtEWHgBg4wC1+G/Y0/DDNqKNBT5ct5o0PyP1mDycO4O9llZqveAfSqRr7LOhodQC/9rzZ0rmGRxvm1vUv+C3DOhzs+2iFf/L97J9rU9PKL9tSzsFmVhAwwzlqo4a9BnXqU0KzS4ju0NTGcaR7Dzu1LcQQWNE1OHnTdZYqP6AtRRKlb3Zv+8Rn/SUyd0UhF3pHUK7xR1MNXn42ESiLX+oSXtXrglOPbo54ygg+wys3erYkUlRMW1CN+6tXbU1PDRwSWty5A2/0YW1F0yGZ5VGEzifJrCHskkyx0DPDjshDhxAvMFpmgbvR9bz314j0hXhBHGf04YpxuuetHAFkU1YsQ+FVIJhp7FE6hKtvFjohNPTKf0LdHEoSKhl0XFFy7mjnexJP9n9Md3Pi90IYkpY9KYDam4gID64xlChSR1C2GRCIpkohvP2KIG7GwMje5f8G7EtE2Ea1AqDUXBst7UiSvVKiRzcM3kmzef2ptYEAtYuUFiJtaj3OQozi+0q7DhLphsFg/CQVzhxi5NHwhFRlKSnbhXJS6BPEoZHOQ=
+  - secure: FoN7qrRyN2xTbFF/YPEMRV3SCd3UTtCh9uZ5os/iHPtX8weOGjoV+Sl1GTlwnxvsSMdXn0QxDxHJxqt3OwhRCHVhTTymaTR91Cy6+BS4cWocyiJaN6gJz3CV6YcxD/Zg3v7lokzi3RwBWGSzBJ6F82QCsguifY+60vFVouhF5zfGBVHNXz2KZzXAcUnSPWD+t6sR0PhwMUfvmD6VoIUdMi6RdBuxevXFwzGVpJSafQgFHvbj7z56TUAHEeRf1MHssIB2c8EpndpqMl6b8gUR1mJ7ZYfM64dYo0z2LrucR4SnJ6xuf3ZxnoRnEH8hgoF2bGkJgiJKmDez63M+8/gEl0OffgxM/i4HRHDBSQhTijW4iEsnB+ZwVS6qGbRjlXGexPX8LskwI12rmNfjYFsjQeycGzSsmSqbtp3MbjKCYkVrpCjtyDim8EAefkj+VnVoTW6yPFSh0lwnvsW4YxU6NHwmY4Ql/fFSBAqInjU7aMKRCMXA9ez7c8ROUJs+AGw+qVIXY2a+ezDLfAaRKhCSGb6cc7y2a38ZmLYOOXcmm3ZCK67GbMtxRKcM8ZiXOlZjE7zYX7QA8Hzus3fuMwEJcEmOBlb0XX8IYkVahxqa22Z5XXiY86SYACs5rcKpk2WDGfPPD1uXSlIRrVvEYNtHZMKl3Fp1GsUn0JLdscq+jT4=
+  - secure: jIvGe9w1MtiYigKriY3QnLmhQUKlzG0PcMBmndgjNajGmxLythXJQZa9M/7LUwpYeUXj0aSUrYlQ262np0JYTS0rzYyZi0YKDK8qb+RDKb8ox9cq9ZJlfQFHQ/CpjYuJwbipgVV9qaL9kCdZsyFa2E0llzAjLaXv5ucU3usX6xKs6qWvFKHDGRCNXKTfZ5fb+3FU8djyMy11EqUJsdXGoFaJ5ylObahCBOhacqdJEDdgNkIN/ReBMdJld+qr/pSgsVqcjMR1afXtyDYHuVyjEdkAB4C2a0oIIzGpviTgCbD9qRvjuIcQ33r1/FHRXep0kUYhyEdIUN3l9PMOegtmKVHxwBp/tr1L7f9lpSYMq7niE0RNKfo/DPhSLoChmjRm4ZaM9hPoRaPCXw3LMkAiM4HyEwDhA8PCMlW/N+p/ODIMDAt8K0LSJky8iI4j8kcuCciUuu1of61Q3nZp/TCjEksK5lL6QmfHc8RbXA/XwpZV3xUxfbSLXm2f6dK67aeCM9CU0UHeJ+sJHeNvgZQqVgz3H6OK3h2/ch9mpxCrQnGe3w7V7Z5uSdXFDi1o5ckp7HGhWepBRUX0JepULz4CDyUUPi8Bq2BVoo/ilqz+uF0fLe453ub28Hp55+25Qymh+yhgBvYyEDVxnYsG3xzWCBrnTWiTtutNz+svhBYLaG0=
+  - LIBEV_VERSION: 4.27
+matrix:
+  include:
+  - name: 'Python: 2.7 UCS-2, platform: manylinux1_x86_64'
+    os: linux
+    env:
+    - PLAT=manylinux1_x86_64
+    - TOXENV=py27-manylinux1
+  - name: 'Python: 2.7 UCS-2, platform: manylinux1_i686'
+    os: linux
+    env:
+    - PLAT=manylinux1_i686
+    - TOXENV=py27-manylinux1
+  - name: 'Python: 2.7 UCS-4, platform: manylinux1_x86_64'
+    os: linux
+    env:
+    - PLAT=manylinux1_x86_64
+    - TOXENV=py27mu-manylinux1
+  - name: 'Python: 2.7 UCS-4, platform: manylinux1_i686'
+    os: linux
+    env:
+    - PLAT=manylinux1_i686
+    - TOXENV=py27mu-manylinux1
+  - name: 'Python: 3.4, platform: manylinux1_x86_64'
+    os: linux
+    env:
+    - PLAT=manylinux1_x86_64
+    - TOXENV=py34-manylinux1
+  - name: 'Python: 3.4, platform: manylinux1_i686'
+    os: linux
+    env:
+    - PLAT=manylinux1_i686
+    - TOXENV=py34-manylinux1
+  - name: 'Python: 3.5, platform: manylinux1_x86_64'
+    os: linux
+    env:
+    - PLAT=manylinux1_x86_64
+    - TOXENV=py35-manylinux1
+  - name: 'Python: 3.5, platform: manylinux1_i686'
+    os: linux
+    env:
+    - PLAT=manylinux1_i686
+    - TOXENV=py35-manylinux1
+  - name: 'Python: 3.6, platform: manylinux1_x86_64'
+    os: linux
+    env:
+    - PLAT=manylinux1_x86_64
+    - TOXENV=py36-manylinux1
+  - name: 'Python: 3.6, platform: manylinux1_i686'
+    os: linux
+    env:
+    - PLAT=manylinux1_i686
+    - TOXENV=py36-manylinux1
+  - name: 'Python: 3.7, platform: manylinux1_x86_64'
+    os: linux
+    env:
+    - PLAT=manylinux1_x86_64
+    - TOXENV=py37-manylinux1
+  - name: 'Python: 3.7, platform: manylinux1_i686'
+    os: linux
+    env:
+    - PLAT=manylinux1_i686
+    - TOXENV=py37-manylinux1
+  - name: 'Python: 2.7, platform: macosx_10_9_x86_64'
+    os: osx
+    env:
+    - PYTHON_VERSION=2.7.16
+    - TRAVIS_PYTHON_VERSION=2.7
+    - TOXENV=py27-macosx
+  - name: 'Python: 3.6, platform: macosx_10_9_x86_64'
+    os: osx
+    env:
+    - PYTHON_VERSION=3.6.8
+    - TRAVIS_PYTHON_VERSION=3.6
+    - TOXENV=py36-macosx
+  - name: 'Python: 3.7, platform: macosx_10_9_x86_64'
+    os: osx
+    env:
+    - PYTHON_VERSION=3.7.4
+    - TRAVIS_PYTHON_VERSION=3.7
+    - TOXENV=py37-macosx
+    - SDIST=true
+  - os: linux
+    dist: bionic
+    language: python
+    python: 3.7
+    sudo: required
+    addons:
+      apt:
+        packages:
+        - lcov
+        - libev-dev
+    env:
+    - TOXENV=coverage
+services:
+- docker
+install:
+- |
+  if [ $TRAVIS_OS_NAME = 'linux' && -n "$PLAT" ]; then
+    docker pull quay.io/pypa/$PLAT
+  fi
+- |
+  if [ $TOXENV = 'coverage' ]; then
+    sudo apt update && sudo DEBIAN_FRONTEND=noninteractive apt install -y lcov libev-dev
+    pip install tox codecov
+  fi
+script:
+- |
+  if [ $TRAVIS_OS_NAME = 'linux' ] && [ -n "$PLAT" ]; then
+    docker run --rm --tty -e TOXENV -e TRAVIS_TAG -e TWINE_USERNAME -e TWINE_PASSWORD -e TWINE_REPOSITORY -e LIBEV_VERSION -v $(pwd):/io quay.io/pypa/$PLAT /io/travis-pipeline-manylinux1.sh
+  fi
+- |
+  if [ $TRAVIS_OS_NAME = 'osx' ]; then
+    ./travis-pipeline-macosx.sh
+  fi
+- |
+  if [ $TOXENV = 'coverage' ]; then
+    tox -vv
+  fi
+after_success:
+- |
+  if [ $TOXENV = 'coverage' ]; then
+    codecov
+  fi
+deploy:
+- provider: releases
+  api_key:
+    secure: S4Xk3a4Y+8QESfkWHZIaqVFYjjA8wNFbjVsf+32Dcq0GEqUEdSJjBdbyROaMBa+cNpC0OzosT66pOGRAY9/b95tGrXSMBxpRveC+lj1uBHWWp6NijqeoVuM3KK/rzvyALeIk6KQ0vaqIPfNeqzbVdIF/lU8P4jh0DLF+wxUjwi9nkzn4sryandjRGdX8ihu2oKBA8K2cPDQy8eppLRNigqo3NNB+vmIUjumOo2zVt1A88SSPNUhcJnN0Z1Y5NfQ/RF52vABJU1WlqcMOyxs0TgeZ2MPBSGp2EqP7PImxEN6A0oRBQBzCXqBFx0LBQxsRXyfp+UzHcB4dgxd+YepONK5+7XoZKFZUcVBCi7R/rhtQkSuNiql86k3i2+nqKPA79BNy5YCei2dEqj/DkiUpiw10PeqhOmJ9QwZNMIaOZ1kOfk+TMbOVWhO9KCAk6YB4qwEgCOn7lROCFAmEYpcoIxilDY58YpPfWVoHrHM0TYZntAsoCvKgtteJTtkO4aWsQnlCH2kJEczuqWS5bJXw9zluye4MDImX5eA+WUhs87ZonR7VNpTcwAOHjwdxcBIy9/fDczIqn0ruu75pc7F+3MBmTjw5FrRpc8O0IqeUTrPVUCDMtR/esWaTrkr17gTRtnvb98pM9Fw8M5rxpxw6pcQOyEXyZt+/m0NhlNi02VA=
+  skip_existing: true
+  skip_cleanup: true
+  file_glob: true
+  file: wheelhouse/*.whl
+  on:
+    tags: true

@@ -5,6 +5,15 @@ bjoern: Fast And Ultra-Lightweight HTTP/1.1 WSGI Server
    :alt: Join the chat at https://gitter.im/jonashaag/bjoern
    :target: https://gitter.im/jonashaag/bjoern?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
 
+.. image:: https://travis-ci.org/hoefling/bjoern.svg?branch=ci
+   :target: https://travis-ci.org/hoefling/bjoern
+
+.. image:: https://codecov.io/gh/hoefling/bjoern/branch/codecov/graph/badge.svg
+   :target: https://codecov.io/gh/hoefling/bjoern
+
+.. image:: https://badge.fury.io/py/bjoern.svg
+   :target: https://badge.fury.io/py/bjoern
+
 A screamingly fast, ultra-lightweight WSGI_ server for CPython 2 and CPython 3,
 written in C using Marc Lehmann's high performance libev_ event loop and
 Ryan Dahl's http-parser_.
